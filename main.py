@@ -14,17 +14,40 @@
 # результаты задач в .zip/.rar и т. д.
 
 
-import psycopg2
-from datetime import datetime
+#import psycopg2
+#from datetime import datetime
 
 # Коннект с базой данных
 
-conn = psycopg2.connect(
-        dbname="",
-        user="",
-        password="",
-        host="localhost",
-	port="5000"
-)
-return conn
+#conn = psycopg2.connect(
+#	dbname="",
+#	user="",
+#	password="",
+#	host="localhost",
+#	port="5000"
+#)
+#return conn
 
+# просто некоторые переменные на всякий
+
+num_num = 1
+
+# приветственное сообщение
+
+def hello():
+	while True:
+		try:
+			print("Здравствуйте! Выберите кабинет от 1 до 5:")
+			num_text = input("введите только цифру: ")
+			num_num = int(num_text)
+			#
+			if 1 <= num_num <= 5:
+				break
+			else:
+				print('ну я же сказал, от 1 до 5!')
+		except ValueError:
+			print('пожалуйста, введите число')
+
+
+
+hello()
